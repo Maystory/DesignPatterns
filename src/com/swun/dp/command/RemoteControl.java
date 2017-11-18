@@ -23,4 +23,14 @@ public class RemoteControl {
     public void offButonWasPushed(int slot){
         offCommands[slot].execute();
     }
+
+    @Override
+    public String toString() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("--------remoteControl----");
+        for (int i=0;i<onCommands.length;i++){
+            stringBuffer.append("slot" + i+":-"+onCommands[i].getClass().getName()+"/n"+"slot"+i+":-"+offCommands[i].getClass().getName());
+        }
+        return stringBuffer.toString();
+    }
 }
